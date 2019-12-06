@@ -1,26 +1,39 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {
+    ChatkitProvider,
+    TokenProvider,
+    withChatkit,
+  } from "@pusher/chatkit-client-react"
+  
+const instanceLocator = "v1:us1:6c0b9bf6-e441-4754-a771-a9b871c503be"
+const userId = "fau"
+const tokenProvider = new TokenProvider({
+    url: "https://us1.pusherplatform.io/services/chatkit_token_provider/v1/6c0b9bf6-e441-4754-a771-a9b871c503be/token",
+});
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <ChatkitProvider
+        instanceLocator={instanceLocator}
+        tokenProvider={tokenProvider}
+        userId={userId}
+      >
+          <WelcomeMessage />
+      </ChatkitProvider>
+       
     </div>
   );
 }
-
+const WelcomeMessage = withChatkit(props => {
+    return (
+      <div>
+        {props.chatkit.isLoading
+          ? 'Connecting to Chatkit...'
+          : `Hello ${props.chatkit.currentUser.name}!`}
+      </div>
+    );
+  });
+  
 export default App;

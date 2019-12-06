@@ -1,0 +1,33 @@
+.Login {
+  background: #f3f3f3;
+  border-radius: 30px;
+  border: 1px solid #d0d0d0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 60px;
+  padding: 50px;
+}
+
+.Login__title {
+  color: #000;
+  font-size: 26px;
+  font-weight: lighter;
+  text-transform: capitalize;
+  margin-top: 0;
+  margin-bottom: 40px;
+}
+
+.Login__button {
+  background: #542182;
+  border-radius: 10px;
+  color: white;
+  margin-bottom: 10px;
+  width: 20rem;
+  padding: 1rem;
+}
+
+.Login__button:hover {
+  cursor: pointer;
+  background: #742fb3;
+}

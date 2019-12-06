@@ -20,18 +20,14 @@ export default function Message({ isOwnMessage, isLatestMessage, createdAt, text
               : 'Chat__messages__message Chat__messages__message--other'
           }
         >
-          <div className="Chat__messages__message__content">{textContent}</div>
           <div className="Chat__messages__message__time">
             <Moment
-              calendar={{
-                sameDay: 'LT',
-                lastDay: '[Yesterday at] LT',
-                lastWeek: '[last] dddd [at] LT',
-              }}
+              format="HH:mm"
             >
               {createdAt}
             </Moment>
           </div>
+          <div className="Chat__messages__message__content">{textContent}</div>
           <div
             className={
               isOwnMessage

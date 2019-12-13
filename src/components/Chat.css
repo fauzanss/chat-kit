@@ -1,0 +1,67 @@
+.Chat {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.Chat__titlebar {
+  display: flex;
+  align-items: center;
+  background: #ededed;
+  padding: 0rem 0.5rem;
+  height: 4rem;
+}
+
+.Chat__titlebar__avatar {
+  width: 3rem;
+  border-radius: 1.5rem;
+  margin-right: 1rem;
+}
+
+.Chat__titlebar__details {
+  display: flex;
+  flex-direction: column;
+}
+
+.Chat__titlebar__details__presence {
+  font-size: 0.8em;
+  opacity: 0.5;
+  margin-top: 0.2rem;
+}
+
+.Chat__messages {
+  background-image: linear-gradient(#d3d3d3, #d0d0d0);
+  flex: 1;
+  padding: 2rem 4rem;
+  overflow-y: scroll;
+}
+
+
+.Chat__compose {
+  box-sizing: border-box;
+  padding: 1rem;
+  background: #ededed;
+  display: flex;
+}
+
+.Chat__compose__input {
+  box-sizing: border-box;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  width: 100%;
+  flex-grow: 1;
+}
+
+.Chat__compose__button {
+  border: 1px solid #c5c5c5;
+  background: none;
+  margin-left: 1rem;
+  padding: 0rem 1rem;
+  border-radius: 0.3rem;
+}
+
+.Chat__compose__button:hover {
+  cursor: pointer;
+}
